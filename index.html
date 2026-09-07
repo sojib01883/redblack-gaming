@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RED BLACK GAMING</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0d10;color:#fff;font-family:Arial,sans-serif}
+header{background:#090a0c;border-bottom:2px solid #e00000;padding:18px 14px;text-align:center}
+.logo{font-size:28px;font-weight:900}.logo span{color:#e00000}
+nav{margin-top:12px}nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:bold;font-size:14px}
+.hero{padding:12px}.hero img{width:100%;max-width:1100px;display:block;margin:auto;border-radius:14px}
+.card{background:#15191e;margin:18px 12px;padding:20px;border-radius:14px;border:1px solid #292e35}
+h2{color:#ff3030;margin-top:0}
+button{background:#e00000;color:white;border:0;padding:12px 18px;border-radius:9px;font-weight:bold}
+.more{display:none;margin-top:15px;line-height:1.8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.item{background:#101317;padding:16px;border-radius:12px;border:1px solid #292e35}
+footer{text-align:center;padding:25px;background:#08090b;color:#aaa}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🔥 <span>RED</span> BLACK GAMING</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#strategy">TH17 STRATEGY</a>
+    <a href="#army">ARMY GUIDE</a>
+    <a href="#tips">TIPS</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <img src="redblack-banner.png" alt="Red Black Gaming TH17">
+</section>
+
+<div class="card">
+  <h2>⚔️ TH17 Attack Strategy</h2>
+  <p>Root Rider + Valkyrie attack guide for practice, war and learning.</p>
+  <button onclick="showMore()">MORE STRATEGY</button>
+  <div class="more" id="more">
+    <b>🔥 Strategy 1:</b> Build a funnel with your heroes, then send the main army through the core.<br>
+    <b>⚡ Strategy 2:</b> Keep Rage and Freeze ready for important defensive zones.<br>
+    <b>💥 Strategy 3:</b> Practice the attack in friendly challenges before using it in war.
+  </div>
+</div>
+
+<div class="card" id="army">
+  <h2>🪖 Army Guide</h2>
+  <div class="grid">
+    <div class="item"><b>Root Rider + Valkyrie</b><br>Strong ground pressure.</div>
+    <div class="item"><b>Queen Funnel</b><br>Create a clean entry.</div>
+    <div class="item"><b>Rage + Freeze</b><br>Use spells at key moments.</div>
+  </div>
+</div>
+
+<div class="card" id="tips">
+  <h2>💡 Tips & Tricks</h2>
+  <p>Learn attack timing, spell placement and funneling. Always practice before war.</p>
+</div>
+
+<footer>© 2026 RED BLACK GAMING • PLAY SMART • ATTACK BETTER</footer>
+
+<script>
+function showMore(){
+  document.getElementById("more").style.display="block";
+}
+</script>
+</body>
+</html>
