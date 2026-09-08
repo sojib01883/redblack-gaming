@@ -1,72 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RED BLACK GAMING</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b0d10;color:#fff;font-family:Arial,sans-serif}
-header{background:#090a0c;border-bottom:2px solid #e00000;padding:18px 14px;text-align:center}
-.logo{font-size:28px;font-weight:900}.logo span{color:#e00000}
-nav{margin-top:12px}nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:bold;font-size:14px}
-.hero{padding:12px}.hero img{width:100%;max-width:1100px;display:block;margin:auto;border-radius:14px}
-.card{background:#15191e;margin:18px 12px;padding:20px;border-radius:14px;border:1px solid #292e35}
-h2{color:#ff3030;margin-top:0}
-button{background:#e00000;color:white;border:0;padding:12px 18px;border-radius:9px;font-weight:bold}
-.more{display:none;margin-top:15px;line-height:1.8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.item{background:#101317;padding:16px;border-radius:12px;border:1px solid #292e35}
-footer{text-align:center;padding:25px;background:#08090b;color:#aaa}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Black Gaming</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #160000, #b00000);
+      padding: 30px 15px;
+      text-align: center;
+      border-bottom: 3px solid red;
+    }
+
+    header h1 {
+      font-size: 36px;
+      color: white;
+      text-shadow: 0 0 15px red;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    nav {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    .hero {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #500000;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 0 12px #300000;
+    }
+
+    .card h3 {
+      color: red;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 25px;
+      text-align: center;
+      background: #111;
+      color: #888;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="logo">🔥 <span>RED</span> BLACK GAMING</div>
+  <header>
+    <h1>🔥 RED BLACK GAMING 🔥</h1>
+    <p>Gaming Tips • Strategies • News</p>
+  </header>
+
   <nav>
-    <a href="#home">HOME</a>
-    <a href="#strategy">TH17 STRATEGY</a>
-    <a href="#army">ARMY GUIDE</a>
-    <a href="#tips">TIPS</a>
+    <a href="#">Home</a>
+    <a href="#strategies">Strategies</a>
+    <a href="#about">About</a>
   </nav>
-</header>
 
-<section class="hero" id="home">
-  <img src="redblack-banner.png" alt="Red Black Gaming TH17">
-</section>
+  <section class="hero">
+    <h2>Welcome Gamers!</h2>
+    <p>
+      Welcome to Red Black Gaming.
+      এখানে Clash of Clans সহ বিভিন্ন গেমের
+      tips, attack strategy এবং gaming tricks পাওয়া যাবে।
+    </p>
+  </section>
 
-<div class="card">
-  <h2>⚔️ TH17 Attack Strategy</h2>
-  <p>Root Rider + Valkyrie attack guide for practice, war and learning.</p>
-  <button onclick="showMore()">MORE STRATEGY</button>
-  <div class="more" id="more">
-    <b>🔥 Strategy 1:</b> Build a funnel with your heroes, then send the main army through the core.<br>
-    <b>⚡ Strategy 2:</b> Keep Rage and Freeze ready for important defensive zones.<br>
-    <b>💥 Strategy 3:</b> Practice the attack in friendly challenges before using it in war.
+  <div class="container" id="strategies">
+
+    <h2 style="text-align:center; color:red;">
+      ⚔️ Gaming Strategies
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>🏰 TH17 Attack</h3>
+        <p>
+          TH17-এর জন্য powerful attack strategy,
+          army composition এবং attack tips এখানে দেওয়া হবে।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>⚔️ War Strategy</h3>
+        <p>
+          Clan War এবং CWL-এ ভালো result পাওয়ার
+          জন্য useful strategy ও tips।
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔥 Gaming Tips</h3>
+        <p>
+          Gaming improve করার জন্য নতুন নতুন
+          tricks এবং helpful guides।
+        </p>
+      </div>
+
+    </div>
   </div>
-</div>
 
-<div class="card" id="army">
-  <h2>🪖 Army Guide</h2>
-  <div class="grid">
-    <div class="item"><b>Root Rider + Valkyrie</b><br>Strong ground pressure.</div>
-    <div class="item"><b>Queen Funnel</b><br>Create a clean entry.</div>
-    <div class="item"><b>Rage + Freeze</b><br>Use spells at key moments.</div>
-  </div>
-</div>
+  <section class="container" id="about">
+    <div class="card">
+      <h3>❤️ About Red Black Gaming</h3>
+      <p>
+        Red Black Gaming হলো gamers-দের জন্য
+        একটি ছোট gaming website।
+      </p>
+    </div>
+  </section>
 
-<div class="card" id="tips">
-  <h2>💡 Tips & Tricks</h2>
-  <p>Learn attack timing, spell placement and funneling. Always practice before war.</p>
-</div>
+  <footer>
+    © 2026 Red Black Gaming | All Rights Reserved
+  </footer>
 
-<footer>© 2026 RED BLACK GAMING • PLAY SMART • ATTACK BETTER</footer>
-
-<script>
-function showMore(){
-  document.getElementById("more").style.display="block";
-}
-</script>
 </body>
 </html>
