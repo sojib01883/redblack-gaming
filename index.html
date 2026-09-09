@@ -80,18 +80,12 @@ header p{
 .controls button{
   width:38px;
   height:38px;
-  margin:0;
-  padding:0;
   border:0;
   border-radius:8px;
   background:#d00000;
   color:white;
   font-size:22px;
   font-weight:bold;
-}
-
-.controls button:hover{
-  background:#ff3030;
 }
 
 .number{
@@ -101,22 +95,41 @@ header p{
   font-weight:bold;
 }
 
-.total{
+.capacity{
   text-align:center;
-  background:#2a0b0b;
+  background:#260909;
   border:1px solid #e00000;
   border-radius:12px;
-  padding:15px;
+  padding:18px;
   margin-bottom:15px;
 }
 
-.total span{
-  color:#ff3333;
-  font-size:25px;
-  font-weight:bold;
+.capacity h3{
+  margin-bottom:8px;
 }
 
-.main-button{
+.capacity .big{
+  font-size:30px;
+  font-weight:bold;
+  color:#ff3333;
+}
+
+.progress{
+  height:12px;
+  background:#333;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:12px;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#e00000;
+  transition:0.3s;
+}
+
+button.main{
   width:100%;
   padding:15px;
   margin-top:10px;
@@ -128,7 +141,7 @@ header p{
   font-weight:bold;
 }
 
-.main-button:hover{
+button.main:hover{
   background:#ff3030;
 }
 
@@ -159,137 +172,49 @@ footer{
 
 <div class="container">
 
-<!-- TROOPS -->
-
 <div class="card">
 
 <h2>🪖 Troops</h2>
 
-<div class="unit">
-  <div class="unit-name">🌳 Root Rider</div>
-  <div class="controls">
-    <button onclick="changeUnit('Root Rider',-1)">−</button>
-    <div class="number" id="RootRider">0</div>
-    <button onclick="changeUnit('Root Rider',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">⚔️ Valkyrie</div>
-  <div class="controls">
-    <button onclick="changeUnit('Valkyrie',-1)">−</button>
-    <div class="number" id="Valkyrie">0</div>
-    <button onclick="changeUnit('Valkyrie',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">🐉 Dragon</div>
-  <div class="controls">
-    <button onclick="changeUnit('Dragon',-1)">−</button>
-    <div class="number" id="Dragon">0</div>
-    <button onclick="changeUnit('Dragon',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">⚡ Electro Dragon</div>
-  <div class="controls">
-    <button onclick="changeUnit('Electro Dragon',-1)">−</button>
-    <div class="number" id="ElectroDragon">0</div>
-    <button onclick="changeUnit('Electro Dragon',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">🌿 Druid</div>
-  <div class="controls">
-    <button onclick="changeUnit('Druid',-1)">−</button>
-    <div class="number" id="Druid">0</div>
-    <button onclick="changeUnit('Druid',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">💚 Healer</div>
-  <div class="controls">
-    <button onclick="changeUnit('Healer',-1)">−</button>
-    <div class="number" id="Healer">0</div>
-    <button onclick="changeUnit('Healer',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">🧙 Wizard</div>
-  <div class="controls">
-    <button onclick="changeUnit('Wizard',-1)">−</button>
-    <div class="number" id="Wizard">0</div>
-    <button onclick="changeUnit('Wizard',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">🏹 Archer</div>
-  <div class="controls">
-    <button onclick="changeUnit('Archer',-1)">−</button>
-    <div class="number" id="Archer">0</div>
-    <button onclick="changeUnit('Archer',1)">+</button>
-  </div>
-</div>
+<div id="troops"></div>
 
 </div>
 
-
-<!-- SPELLS -->
 
 <div class="card">
 
 <h2>🪄 Spells</h2>
 
-<div class="unit">
-  <div class="unit-name">🔥 Rage Spell</div>
-  <div class="controls">
-    <button onclick="changeUnit('Rage Spell',-1)">−</button>
-    <div class="number" id="RageSpell">0</div>
-    <button onclick="changeUnit('Rage Spell',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">❄️ Freeze Spell</div>
-  <div class="controls">
-    <button onclick="changeUnit('Freeze Spell',-1)">−</button>
-    <div class="number" id="FreezeSpell">0</div>
-    <button onclick="changeUnit('Freeze Spell',1)">+</button>
-  </div>
-</div>
-
-<div class="unit">
-  <div class="unit-name">👻 Invisibility Spell</div>
-  <div class="controls">
-    <button onclick="changeUnit('Invisibility Spell',-1)">−</button>
-    <div class="number" id="InvisibilitySpell">0</div>
-    <button onclick="changeUnit('Invisibility Spell',1)">+</button>
-  </div>
-</div>
+<div id="spells"></div>
 
 </div>
 
-
-<!-- TOTAL -->
 
 <div class="card">
 
-<div class="total">
-  <p>⚔️ Total Army Units</p>
-  <span id="total">0</span>
+<h2>📊 Army Capacity</h2>
+
+<div class="capacity">
+
+<h3>Used Housing Space</h3>
+
+<div class="big">
+<span id="used">0</span> / <span id="max">320</span>
 </div>
 
-<button class="main-button" onclick="showArmy()">
+<div class="progress">
+<div class="progress-bar" id="progress"></div>
+</div>
+
+<p id="remaining">320 space remaining</p>
+
+</div>
+
+<button class="main" onclick="showArmy()">
 🚀 SHOW MY ARMY
 </button>
 
-<button class="main-button" onclick="resetArmy()">
+<button class="main" onclick="resetArmy()">
 🔄 RESET ARMY
 </button>
 
@@ -308,50 +233,113 @@ footer{
 
 <script>
 
+const maxCapacity = 320;
+
+const troopData = {
+  "Root Rider": 6,
+  "Valkyrie": 8,
+  "Dragon": 20,
+  "Electro Dragon": 30,
+  "Druid": 16,
+  "Healer": 14,
+  "Wizard": 4,
+  "Archer": 1
+};
+
+const spellData = {
+  "Rage Spell": 2,
+  "Freeze Spell": 1,
+  "Invisibility Spell": 1
+};
+
 const army = {};
 
-const ids = {
-  "Root Rider":"RootRider",
-  "Valkyrie":"Valkyrie",
-  "Dragon":"Dragon",
-  "Electro Dragon":"ElectroDragon",
-  "Druid":"Druid",
-  "Healer":"Healer",
-  "Wizard":"Wizard",
-  "Archer":"Archer",
-  "Rage Spell":"RageSpell",
-  "Freeze Spell":"FreezeSpell",
-  "Invisibility Spell":"InvisibilitySpell"
-};
+
+function createUnits(data, containerId){
+
+  const container=document.getElementById(containerId);
+
+  for(let name in data){
+
+    army[name]=0;
+
+    const safeId=name.replace(/[^a-zA-Z0-9]/g,"");
+
+    container.innerHTML += `
+      <div class="unit">
+
+        <div class="unit-name">
+          ${name}
+          <small>(${data[name]} space)</small>
+        </div>
+
+        <div class="controls">
+
+          <button onclick="changeUnit('${name}',-1)">
+            −
+          </button>
+
+          <div class="number" id="${safeId}">
+            0
+          </div>
+
+          <button onclick="changeUnit('${name}',1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  }
+}
 
 
 function changeUnit(name, amount){
 
-  if(!army[name]){
-    army[name]=0;
+  let data = troopData[name] || spellData[name];
+
+  let newValue = army[name] + amount;
+
+  if(newValue < 0){
+    newValue = 0;
   }
 
-  army[name] += amount;
+  army[name] = newValue;
 
-  if(army[name] < 0){
-    army[name]=0;
-  }
-
-  document.getElementById(ids[name]).innerText=army[name];
-
-  updateTotal();
+  updateDisplay();
 }
 
 
-function updateTotal(){
+function updateDisplay(){
 
-  let total=0;
+  let used=0;
 
   for(let name in army){
-    total += army[name];
+
+    const space =
+      troopData[name] || spellData[name];
+
+    used += army[name] * space;
   }
 
-  document.getElementById("total").innerText=total;
+  document.getElementById("used").innerText=used;
+
+  const remaining=maxCapacity-used;
+
+  document.getElementById("remaining").innerText =
+    remaining >= 0
+    ? remaining+" space remaining"
+    : Math.abs(remaining)+" space over capacity";
+
+  let percentage=(used/maxCapacity)*100;
+
+  if(percentage>100){
+    percentage=100;
+  }
+
+  document.getElementById("progress").style.width =
+    percentage+"%";
 }
 
 
@@ -367,17 +355,26 @@ function showArmy(){
 
   for(let name in army){
 
-    if(army[name] > 0){
+    if(army[name]>0){
 
       found=true;
 
-      html += "⚔️ " + name + " × " + army[name] + "<br>";
+      html +=
+        "⚔️ "+name+
+        " × "+army[name]+"<br>";
     }
   }
 
   if(!found){
 
-    html += "⚠️ Your army is empty.";
+    html+="⚠️ Your army is empty.";
+
+  }else{
+
+    html +=
+      "<br>🏰 Housing Used: "+
+      document.getElementById("used").innerText+
+      " / "+maxCapacity;
   }
 
   result.innerHTML=html;
@@ -390,13 +387,21 @@ function resetArmy(){
 
     army[name]=0;
 
-    document.getElementById(ids[name]).innerText="0";
+    const safeId=name.replace(/[^a-zA-Z0-9]/g,"");
+
+    document.getElementById(safeId).innerText="0";
   }
 
-  updateTotal();
+  updateDisplay();
 
   document.getElementById("armyResult").style.display="none";
 }
+
+
+createUnits(troopData,"troops");
+createUnits(spellData,"spells");
+
+updateDisplay();
 
 </script>
 
