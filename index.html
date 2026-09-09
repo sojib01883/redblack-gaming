@@ -1,156 +1,91 @@
-
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Black Gaming</title>
+  <title>Red Black Gaming | COC TH17 Attack Helper</title>
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
 
     body {
-      background: #080808;
+      background: #0b0b0b;
       color: white;
+      text-align: center;
     }
 
     header {
-      background: linear-gradient(135deg, #090909, #b00000);
-      padding: 40px 15px;
-      text-align: center;
-      border-bottom: 3px solid red;
+      background: linear-gradient(135deg, #e00000, #111);
+      padding: 30px 15px;
+      border-bottom: 3px solid #ff0000;
     }
 
     header h1 {
-      font-size: 36px;
-      text-shadow: 0 0 15px red;
+      font-size: 32px;
+      margin-bottom: 8px;
     }
 
     header p {
-      margin-top: 10px;
       color: #ddd;
-    }
-
-    nav {
-      background: #111;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: red;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: radial-gradient(circle, #400000, #080808 70%);
-    }
-
-    .hero h2 {
-      color: #ff2222;
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: #ddd;
-      line-height: 1.7;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 25px 5px 0;
-      padding: 13px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .red-btn {
-      background: red;
-      color: white;
-    }
-
-    .facebook {
-      background: #1877f2;
-      color: white;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 700px;
       margin: auto;
-      padding: 40px 20px;
-    }
-
-    .title {
-      text-align: center;
-      color: #ff2222;
-      margin-bottom: 25px;
-      font-size: 28px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      padding: 25px 15px;
     }
 
     .card {
-      background: #151515;
-      border: 1px solid #650000;
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 0 12px #250000;
+      background: #171717;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 5px 20px rgba(255,0,0,0.15);
     }
 
-    .card h3 {
-      color: #ff3333;
-      margin-bottom: 12px;
+    .card h2 {
+      color: #ff3030;
+      margin-bottom: 10px;
     }
 
-    .card p {
-      color: #ccc;
-      line-height: 1.6;
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #e00000;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .army {
+    button:hover {
+      background: #ff3030;
+    }
+
+    .result {
+      display: none;
       margin-top: 15px;
       padding: 15px;
-      background: #0d0d0d;
-      border-left: 4px solid red;
-      border-radius: 6px;
-      color: #ddd;
-      line-height: 1.8;
+      background: #222;
+      border-radius: 10px;
+      text-align: left;
+      line-height: 1.7;
     }
 
     footer {
+      margin-top: 30px;
+      padding: 20px;
       background: #111;
-      text-align: center;
-      padding: 30px 15px;
       color: #888;
-      margin-top: 20px;
-    }
-
-    footer span {
-      color: red;
     }
   </style>
 </head>
@@ -159,152 +94,111 @@
 
   <header>
     <h1>🔥 RED BLACK GAMING 🔥</h1>
-    <p>Clash of Clans • Gaming Tips • Attack Strategy</p>
+    <p>Clash of Clans TH17 Attack Helper</p>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#th17">TH17</a>
-    <a href="#tips">Tips</a>
-    <a href="#about">About</a>
-  </nav>
-
-  <section class="hero" id="home">
-
-    <h2>🎮 Welcome Gamers!</h2>
-
-    <p>
-      Red Black Gaming-এ পাবি Clash of Clans-এর
-      attack strategy, TH17 tips এবং gaming guide।
-    </p>
-
-    <a class="btn red-btn" href="#th17">
-      ⚔️ TH17 Strategy
-    </a>
-
-    <a class="btn facebook"
-       href="https://www.facebook.com/share/19P55WzyoR/"
-       target="_blank">
-      📘 Facebook Page
-    </a>
-
-  </section>
-
-
-  <section class="container" id="th17">
-
-    <h2 class="title">🏰 TH17 Attack Strategy</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>⚔️ Root Rider Attack</h3>
-
-        <p>
-          Root Rider ব্যবহার করে enemy base-এর
-          defence ভেঙে ভিতরে push করার strategy।
-        </p>
-
-        <div class="army">
-          <b>Army Idea:</b><br>
-          Root Riders + Valkyries + Healers<br>
-          সাথে প্রয়োজনীয় Spells ও Siege Machine।
-        </div>
-      </div>
-
-
-      <div class="card">
-        <h3>🔥 Electro Dragon</h3>
-
-        <p>
-          Base-এর এক পাশে ভালো value থাকলে
-          Electro Dragon দিয়ে strong attack করা যায়।
-        </p>
-
-        <div class="army">
-          <b>Tip:</b><br>
-          Air Defense এবং important defenses আগে দেখে নাও।
-        </div>
-      </div>
-
-
-      <div class="card">
-        <h3>👑 Hero Strategy</h3>
-
-        <p>
-          King, Queen, Warden এবং Royal Champion
-          সঠিক সময়ে ব্যবহার করা খুব গুরুত্বপূর্ণ।
-        </p>
-
-        <div class="army">
-          <b>Tip:</b><br>
-          Hero ability প্রয়োজনীয় সময়ের জন্য রেখে দাও।
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="container" id="tips">
-
-    <h2 class="title">🎯 Gaming Tips</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>👀 Base Scout</h3>
-        <p>
-          Attack করার আগে enemy base ভালোভাবে দেখে
-          traps এবং defenses-এর অবস্থান বুঝে নাও।
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>💪 Practice</h3>
-        <p>
-          একই attack strategy practice করলে
-          timing এবং troop placement ভালো হবে।
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🏆 Clan War</h3>
-        <p>
-          War attack-এর আগে clan-এর সাথে plan করলে
-          ভালো result পাওয়ার chance বাড়ে।
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="container" id="about">
-
-    <h2 class="title">❤️ About Red Black Gaming</h2>
+  <div class="container">
 
     <div class="card">
+      <h2>🏰 TH17 Attack Helper</h2>
+      <p>Choose an attack strategy and learn the basic army setup.</p>
 
-      <p>
-        Red Black Gaming হলো gamers-দের জন্য
-        একটি gaming website।
-        এখানে Clash of Clans strategy,
-        gaming tips এবং নতুন gaming content
-        প্রকাশ করা হবে।
-      </p>
+      <button onclick="showStrategy('root')">
+        🌳 Root Rider + Valkyrie
+      </button>
 
+      <button onclick="showStrategy('druid')">
+        🌿 Druid + Root Rider
+      </button>
+
+      <button onclick="showStrategy('air')">
+        🐉 Dragon Air Attack
+      </button>
+
+      <div id="strategy" class="result"></div>
     </div>
 
-  </section>
+    <div class="card">
+      <h2>⚔️ Attack Tips</h2>
 
+      <button onclick="showTips()">
+        📋 Show Attack Tips
+      </button>
+
+      <div id="tips" class="result"></div>
+    </div>
+
+  </div>
 
   <footer>
-    © 2026 <span>Red Black Gaming</span>
-    | Gaming Community
+    <p>© 2026 Red Black Gaming</p>
+    <p>Made for Clash of Clans players ❤️</p>
   </footer>
+
+  <script>
+
+    function showStrategy(type) {
+
+      const box = document.getElementById("strategy");
+
+      box.style.display = "block";
+
+      if (type === "root") {
+        box.innerHTML = `
+          <h3>🌳 Root Rider + Valkyrie</h3>
+          <p><b>Army idea:</b></p>
+          <p>Root Riders + Valkyries + support troops</p>
+          <p><b>Basic plan:</b></p>
+          <p>1️⃣ Create a funnel.</p>
+          <p>2️⃣ Send the main army toward the core.</p>
+          <p>3️⃣ Use heroes and spells at the correct timing.</p>
+          <p>4️⃣ Save some troops for cleanup.</p>
+        `;
+      }
+
+      if (type === "druid") {
+        box.innerHTML = `
+          <h3>🌿 Druid + Root Rider</h3>
+          <p><b>Army idea:</b></p>
+          <p>Root Riders + Druids + support troops</p>
+          <p><b>Basic plan:</b></p>
+          <p>1️⃣ Start with a safe funnel.</p>
+          <p>2️⃣ Push the main army inside.</p>
+          <p>3️⃣ Use Druids to support the army.</p>
+          <p>4️⃣ Keep an eye on spell timing.</p>
+        `;
+      }
+
+      if (type === "air") {
+        box.innerHTML = `
+          <h3>🐉 Dragon Air Attack</h3>
+          <p><b>Army idea:</b></p>
+          <p>Dragons + support air troops</p>
+          <p><b>Basic plan:</b></p>
+          <p>1️⃣ Remove important defenses first.</p>
+          <p>2️⃣ Create an air funnel.</p>
+          <p>3️⃣ Send Dragons through the base.</p>
+          <p>4️⃣ Use air spells carefully.</p>
+        `;
+      }
+    }
+
+    function showTips() {
+
+      const box = document.getElementById("tips");
+
+      box.style.display = "block";
+
+      box.innerHTML = `
+        <p>🎯 Study the enemy base before attacking.</p>
+        <p>🧠 Plan your funnel first.</p>
+        <p>⏱️ Don't use all abilities at once.</p>
+        <p>🪄 Save important spells for the core.</p>
+        <p>🏆 Always keep cleanup troops.</p>
+      `;
+    }
+
+  </script>
 
 </body>
 </html>
