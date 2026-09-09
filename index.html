@@ -410,4 +410,220 @@ updateTotal();
 </script>
 
 </body>
-</html>
+</html><!-- ATTACK STRATEGY -->
+
+<div class="card">
+
+<h2>🎯 Attack Strategy</h2>
+
+<p style="color:#ccc;">
+Build your army first, then get a strategy.
+</p>
+
+<button class="reset" onclick="getStrategy()">
+🔥 GET ATTACK STRATEGY
+</button>
+
+<div id="strategyBox"
+style="
+display:none;
+margin-top:15px;
+background:#2a1111;
+padding:18px;
+border-radius:12px;
+line-height:1.8;
+text-align:left;
+">
+</div>
+
+</div>
+
+
+<script>
+
+function getStrategy(){
+
+  let root =
+    units.root;
+
+  let dragon =
+    units.dragon;
+
+  let edragon =
+    units.edragon;
+
+  let valk =
+    units.valk;
+
+  let healer =
+    units.healer;
+
+  let druid =
+    units.druid;
+
+  let box =
+    document.getElementById("strategyBox");
+
+  box.style.display="block";
+
+
+  /*
+  ROOT RIDER STRATEGY
+  */
+
+  if(root > dragon && root > edragon){
+
+    box.innerHTML = `
+    <h3>🌳 Ground Push Strategy</h3>
+
+    <p>⚔️ Your army is suitable for a
+    <b>Root Rider Ground Push</b>.</p>
+
+    <p>1️⃣ Create a funnel on one side.</p>
+
+    <p>2️⃣ Send Root Riders toward the core.</p>
+
+    <p>3️⃣ Use Heroes to support the main push.</p>
+
+    <p>4️⃣ Use Rage when your army reaches
+    important defenses.</p>
+
+    <p>5️⃣ Save some troops for cleanup.</p>
+
+    <p>🏆 Good luck, Chief!</p>
+    `;
+
+  }
+
+
+  /*
+  DRAGON STRATEGY
+  */
+
+  else if(dragon >= edragon && dragon > root){
+
+    box.innerHTML = `
+    <h3>🐉 Dragon Air Attack</h3>
+
+    <p>⚔️ Your army is suitable for a
+    <b>Dragon Air Attack</b>.</p>
+
+    <p>1️⃣ Clear one side of the base.</p>
+
+    <p>2️⃣ Create an air funnel.</p>
+
+    <p>3️⃣ Deploy Dragons together.</p>
+
+    <p>4️⃣ Use Freeze/Rage at important
+    defenses.</p>
+
+    <p>5️⃣ Keep cleanup troops for the end.</p>
+
+    <p>🔥 Push through the core!</p>
+    `;
+
+  }
+
+
+  /*
+  ELECTRO DRAGON
+  */
+
+  else if(edragon > dragon){
+
+    box.innerHTML = `
+    <h3>⚡ Electro Dragon Strategy</h3>
+
+    <p>⚔️ Your army is suitable for an
+    <b>Electro Dragon Attack</b>.</p>
+
+    <p>1️⃣ Look for buildings close together.</p>
+
+    <p>2️⃣ Create a clean funnel.</p>
+
+    <p>3️⃣ Deploy Electro Dragons together.</p>
+
+    <p>4️⃣ Use Rage to increase their damage.</p>
+
+    <p>5️⃣ Freeze dangerous defenses.</p>
+
+    <p>⚡ Chain damage can be very powerful!</p>
+    `;
+
+  }
+
+
+  /*
+  VALKYRIE
+  */
+
+  else if(valk > root){
+
+    box.innerHTML = `
+    <h3>⚔️ Valkyrie Ground Attack</h3>
+
+    <p>⚔️ Your army has a strong
+    <b>Valkyrie Ground</b> setup.</p>
+
+    <p>1️⃣ Make a funnel.</p>
+
+    <p>2️⃣ Send Valkyries toward the base.</p>
+
+    <p>3️⃣ Support them with your Heroes.</p>
+
+    <p>4️⃣ Use Rage when entering the core.</p>
+
+    <p>5️⃣ Keep cleanup troops ready.</p>
+    `;
+
+  }
+
+
+  /*
+  HEALER
+  */
+
+  else if(healer > 0 && druid > 0){
+
+    box.innerHTML = `
+    <h3>💚 Support Army</h3>
+
+    <p>🧠 You have a support-heavy army.</p>
+
+    <p>1️⃣ Protect your support troops.</p>
+
+    <p>2️⃣ Build a strong funnel.</p>
+
+    <p>3️⃣ Let your main troops enter first.</p>
+
+    <p>4️⃣ Use healing/support abilities
+    carefully.</p>
+
+    <p>🎯 Focus on safe pathing.</p>
+    `;
+
+  }
+
+
+  else{
+
+    box.innerHTML = `
+    <h3>🧠 Custom Strategy</h3>
+
+    <p>Your army does not match one of
+    the preset strategies yet.</p>
+
+    <p>🎯 Try adding more Root Riders,
+    Dragons or Valkyries.</p>
+
+    <p>⚔️ Build a focused army instead of
+    mixing too many different troops.</p>
+
+    <p>🏆 Good luck with your attack!</p>
+    `;
+
+  }
+
+}
+
+</script>
