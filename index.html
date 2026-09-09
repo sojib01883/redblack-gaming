@@ -1,156 +1,409 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Black Gaming</title>
+
+<title>Red Black Gaming | TH17 Army Builder</title>
 
 <style>
+
 body{
-  background:#111;
+  background:#0b0b0b;
   color:white;
-  font-family:Arial;
+  font-family:Arial,sans-serif;
+  margin:0;
+}
+
+header{
   text-align:center;
-  padding:20px;
+  padding:25px 10px;
+  background:linear-gradient(135deg,#e00000,#111);
+  border-bottom:3px solid red;
+}
+
+header h1{
+  margin:0;
+}
+
+header p{
+  color:#ddd;
+}
+
+.container{
+  max-width:650px;
+  margin:auto;
+  padding:20px 12px;
 }
 
 .card{
-  background:#222;
-  padding:20px;
+  background:#191919;
+  padding:18px;
   border-radius:15px;
-  max-width:500px;
-  margin:auto;
+  margin-bottom:18px;
+  border:1px solid #333;
+}
+
+.card h2{
+  color:#ff3333;
 }
 
 .unit{
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  background:#333;
-  padding:12px;
-  margin:10px 0;
+  justify-content:space-between;
+  background:#292929;
+  padding:11px;
+  margin:8px 0;
   border-radius:10px;
 }
 
-button{
-  background:red;
-  color:white;
-  border:0;
-  border-radius:8px;
-  font-size:22px;
+.unit-name{
+  font-weight:bold;
+}
+
+.controls{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.controls button{
   width:40px;
   height:40px;
+  border:0;
+  border-radius:8px;
+  background:#d00000;
+  color:white;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .number{
-  display:inline-block;
-  width:35px;
+  width:30px;
+  text-align:center;
   font-size:20px;
   font-weight:bold;
 }
 
-#total{
-  font-size:25px;
-  color:#ff3333;
-  margin:20px;
+.total{
+  text-align:center;
+  padding:15px;
+  background:#300909;
+  border-radius:10px;
+  margin-top:15px;
 }
+
+.total span{
+  color:#ff3333;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.reset{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  border:0;
+  border-radius:10px;
+  background:#e00000;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#888;
+  background:#111;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<header>
 
 <h1>🔥 RED BLACK GAMING 🔥</h1>
 
-<h2>🏰 TH17 Army Builder</h2>
+<p>Clash of Clans TH17 Army Builder</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+
+<h2>🪖 Troops</h2>
+
 
 <div class="unit">
-<span>🌳 Root Rider</span>
-<div>
-<button onclick="minus('root')">−</button>
+<span class="unit-name">🌳 Root Rider</span>
+
+<div class="controls">
+<button onclick="change('root',-1)">−</button>
 <span class="number" id="root">0</span>
-<button onclick="plus('root')">+</button>
+<button onclick="change('root',1)">+</button>
 </div>
 </div>
 
+
 <div class="unit">
-<span>⚔️ Valkyrie</span>
-<div>
-<button onclick="minus('valk')">−</button>
+<span class="unit-name">⚔️ Valkyrie</span>
+
+<div class="controls">
+<button onclick="change('valk',-1)">−</button>
 <span class="number" id="valk">0</span>
-<button onclick="plus('valk')">+</button>
+<button onclick="change('valk',1)">+</button>
 </div>
 </div>
 
+
 <div class="unit">
-<span>🐉 Dragon</span>
-<div>
-<button onclick="minus('dragon')">−</button>
+<span class="unit-name">🐉 Dragon</span>
+
+<div class="controls">
+<button onclick="change('dragon',-1)">−</button>
 <span class="number" id="dragon">0</span>
-<button onclick="plus('dragon')">+</button>
+<button onclick="change('dragon',1)">+</button>
 </div>
 </div>
+
 
 <div class="unit">
-<span>🌿 Druid</span>
-<div>
-<button onclick="minus('druid')">−</button>
+<span class="unit-name">⚡ Electro Dragon</span>
+
+<div class="controls">
+<button onclick="change('edragon',-1)">−</button>
+<span class="number" id="edragon">0</span>
+<button onclick="change('edragon',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">🌿 Druid</span>
+
+<div class="controls">
+<button onclick="change('druid',-1)">−</button>
 <span class="number" id="druid">0</span>
-<button onclick="plus('druid')">+</button>
+<button onclick="change('druid',1)">+</button>
 </div>
 </div>
 
-<h2>📊 Total Units</h2>
 
-<div id="total">0</div>
+<div class="unit">
+<span class="unit-name">💚 Healer</span>
+
+<div class="controls">
+<button onclick="change('healer',-1)">−</button>
+<span class="number" id="healer">0</span>
+<button onclick="change('healer',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">🧙 Wizard</span>
+
+<div class="controls">
+<button onclick="change('wizard',-1)">−</button>
+<span class="number" id="wizard">0</span>
+<button onclick="change('wizard',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">🏹 Archer</span>
+
+<div class="controls">
+<button onclick="change('archer',-1)">−</button>
+<span class="number" id="archer">0</span>
+<button onclick="change('archer',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">👹 Minion</span>
+
+<div class="controls">
+<button onclick="change('minion',-1)">−</button>
+<span class="number" id="minion">0</span>
+<button onclick="change('minion',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">🗿 Golem</span>
+
+<div class="controls">
+<button onclick="change('golem',-1)">−</button>
+<span class="number" id="golem">0</span>
+<button onclick="change('golem',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">💣 Wall Breaker</span>
+
+<div class="controls">
+<button onclick="change('wallbreaker',-1)">−</button>
+<span class="number" id="wallbreaker">0</span>
+<button onclick="change('wallbreaker',1)">+</button>
+</div>
+</div>
+
 
 </div>
+
+
+<div class="card">
+
+<h2>🪄 Spells</h2>
+
+
+<div class="unit">
+<span class="unit-name">🔥 Rage</span>
+
+<div class="controls">
+<button onclick="change('rage',-1)">−</button>
+<span class="number" id="rage">0</span>
+<button onclick="change('rage',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">❄️ Freeze</span>
+
+<div class="controls">
+<button onclick="change('freeze',-1)">−</button>
+<span class="number" id="freeze">0</span>
+<button onclick="change('freeze',1)">+</button>
+</div>
+</div>
+
+
+<div class="unit">
+<span class="unit-name">👻 Invisibility</span>
+
+<div class="controls">
+<button onclick="change('invisibility',-1)">−</button>
+<span class="number" id="invisibility">0</span>
+<button onclick="change('invisibility',1)">+</button>
+</div>
+</div>
+
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 My Army</h2>
+
+<div class="total">
+
+<p>Total Units</p>
+
+<span id="total">0</span>
+
+</div>
+
+
+<button class="reset" onclick="resetArmy()">
+
+🔄 RESET ARMY
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+© 2026 Red Black Gaming ❤️
+
+</footer>
+
 
 <script>
 
-function plus(id){
+let units = {
 
-let number = document.getElementById(id);
+root:0,
+valk:0,
+dragon:0,
+edragon:0,
+druid:0,
+healer:0,
+wizard:0,
+archer:0,
+minion:0,
+golem:0,
+wallbreaker:0,
+rage:0,
+freeze:0,
+invisibility:0
 
-let value = Number(number.innerText);
+};
 
-value = value + 1;
 
-number.innerText = value;
+function change(name,amount){
+
+units[name] = units[name] + amount;
+
+if(units[name] < 0){
+
+units[name] = 0;
+
+}
+
+document.getElementById(name).innerText = units[name];
 
 updateTotal();
 
 }
 
-function minus(id){
-
-let number = document.getElementById(id);
-
-let value = Number(number.innerText);
-
-if(value > 0){
-
-value = value - 1;
-
-}
-
-number.innerText = value;
-
-updateTotal();
-
-}
 
 function updateTotal(){
 
 let total = 0;
 
-total += Number(document.getElementById("root").innerText);
-total += Number(document.getElementById("valk").innerText);
-total += Number(document.getElementById("dragon").innerText);
-total += Number(document.getElementById("druid").innerText);
+for(let name in units){
+
+total = total + units[name];
+
+}
 
 document.getElementById("total").innerText = total;
+
+}
+
+
+function resetArmy(){
+
+for(let name in units){
+
+units[name] = 0;
+
+document.getElementById(name).innerText = 0;
+
+}
+
+updateTotal();
 
 }
 
