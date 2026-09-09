@@ -1,407 +1,158 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Red Black Gaming | TH17 Army Builder</title>
+<title>Red Black Gaming</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-}
-
 body{
-  background:#080808;
+  background:#111;
   color:white;
-}
-
-header{
+  font-family:Arial;
   text-align:center;
-  padding:30px 15px;
-  background:linear-gradient(135deg,#e00000,#111);
-  border-bottom:3px solid red;
-}
-
-header h1{
-  font-size:30px;
-}
-
-header p{
-  color:#ddd;
-  margin-top:8px;
-}
-
-.container{
-  max-width:750px;
-  margin:auto;
-  padding:20px 15px;
+  padding:20px;
 }
 
 .card{
-  background:#171717;
-  border:1px solid #333;
-  border-radius:15px;
+  background:#222;
   padding:20px;
-  margin-bottom:18px;
-}
-
-.card h2{
-  color:#ff3030;
-  margin-bottom:15px;
+  border-radius:15px;
+  max-width:500px;
+  margin:auto;
 }
 
 .unit{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  background:#222;
-  border:1px solid #444;
-  border-radius:12px;
-  padding:12px;
-  margin:9px 0;
-}
-
-.unit-name{
-  font-size:16px;
-  font-weight:bold;
-}
-
-.controls{
-  display:flex;
   align-items:center;
-  gap:8px;
+  background:#333;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
 }
 
-.controls button{
-  width:38px;
-  height:38px;
+button{
+  background:red;
+  color:white;
   border:0;
   border-radius:8px;
-  background:#d00000;
-  color:white;
   font-size:22px;
-  font-weight:bold;
+  width:40px;
+  height:40px;
 }
 
 .number{
-  min-width:30px;
-  text-align:center;
-  font-size:18px;
+  display:inline-block;
+  width:35px;
+  font-size:20px;
   font-weight:bold;
 }
 
-.capacity{
-  text-align:center;
-  background:#260909;
-  border:1px solid #e00000;
-  border-radius:12px;
-  padding:18px;
-  margin-bottom:15px;
-}
-
-.capacity h3{
-  margin-bottom:8px;
-}
-
-.capacity .big{
-  font-size:30px;
-  font-weight:bold;
+#total{
+  font-size:25px;
   color:#ff3333;
-}
-
-.progress{
-  height:12px;
-  background:#333;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:12px;
-}
-
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:#e00000;
-  transition:0.3s;
-}
-
-button.main{
-  width:100%;
-  padding:15px;
-  margin-top:10px;
-  border:0;
-  border-radius:10px;
-  background:#e00000;
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-}
-
-button.main:hover{
-  background:#ff3030;
-}
-
-#armyResult{
-  display:none;
-  margin-top:15px;
-  background:#222;
-  padding:15px;
-  border-radius:10px;
-  line-height:1.9;
-}
-
-footer{
-  text-align:center;
-  padding:25px;
-  background:#111;
-  color:#888;
+  margin:20px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🔥 RED BLACK GAMING 🔥</h1>
-  <p>Clash of Clans TH17 Army Builder</p>
-</header>
-
-<div class="container">
-
 <div class="card">
 
-<h2>🪖 Troops</h2>
+<h1>🔥 RED BLACK GAMING 🔥</h1>
 
-<div id="troops"></div>
+<h2>🏰 TH17 Army Builder</h2>
 
+<div class="unit">
+<span>🌳 Root Rider</span>
+<div>
+<button onclick="minus('root')">−</button>
+<span class="number" id="root">0</span>
+<button onclick="plus('root')">+</button>
+</div>
 </div>
 
-
-<div class="card">
-
-<h2>🪄 Spells</h2>
-
-<div id="spells"></div>
-
+<div class="unit">
+<span>⚔️ Valkyrie</span>
+<div>
+<button onclick="minus('valk')">−</button>
+<span class="number" id="valk">0</span>
+<button onclick="plus('valk')">+</button>
+</div>
 </div>
 
-
-<div class="card">
-
-<h2>📊 Army Capacity</h2>
-
-<div class="capacity">
-
-<h3>Used Housing Space</h3>
-
-<div class="big">
-<span id="used">0</span> / <span id="max">320</span>
+<div class="unit">
+<span>🐉 Dragon</span>
+<div>
+<button onclick="minus('dragon')">−</button>
+<span class="number" id="dragon">0</span>
+<button onclick="plus('dragon')">+</button>
+</div>
 </div>
 
-<div class="progress">
-<div class="progress-bar" id="progress"></div>
+<div class="unit">
+<span>🌿 Druid</span>
+<div>
+<button onclick="minus('druid')">−</button>
+<span class="number" id="druid">0</span>
+<button onclick="plus('druid')">+</button>
+</div>
 </div>
 
-<p id="remaining">320 space remaining</p>
+<h2>📊 Total Units</h2>
+
+<div id="total">0</div>
 
 </div>
-
-<button class="main" onclick="showArmy()">
-🚀 SHOW MY ARMY
-</button>
-
-<button class="main" onclick="resetArmy()">
-🔄 RESET ARMY
-</button>
-
-<div id="armyResult"></div>
-
-</div>
-
-</div>
-
-
-<footer>
-<p>© 2026 Red Black Gaming</p>
-<p>Made for Clash of Clans players ❤️</p>
-</footer>
-
 
 <script>
 
-const maxCapacity = 320;
+function plus(id){
 
-const troopData = {
-  "Root Rider": 6,
-  "Valkyrie": 8,
-  "Dragon": 20,
-  "Electro Dragon": 30,
-  "Druid": 16,
-  "Healer": 14,
-  "Wizard": 4,
-  "Archer": 1
-};
+let number = document.getElementById(id);
 
-const spellData = {
-  "Rage Spell": 2,
-  "Freeze Spell": 1,
-  "Invisibility Spell": 1
-};
+let value = Number(number.innerText);
 
-const army = {};
+value = value + 1;
 
+number.innerText = value;
 
-function createUnits(data, containerId){
+updateTotal();
 
-  const container=document.getElementById(containerId);
-
-  for(let name in data){
-
-    army[name]=0;
-
-    const safeId=name.replace(/[^a-zA-Z0-9]/g,"");
-
-    container.innerHTML += `
-      <div class="unit">
-
-        <div class="unit-name">
-          ${name}
-          <small>(${data[name]} space)</small>
-        </div>
-
-        <div class="controls">
-
-          <button onclick="changeUnit('${name}',-1)">
-            −
-          </button>
-
-          <div class="number" id="${safeId}">
-            0
-          </div>
-
-          <button onclick="changeUnit('${name}',1)">
-            +
-          </button>
-
-        </div>
-
-      </div>
-    `;
-  }
 }
 
+function minus(id){
 
-function changeUnit(name, amount){
+let number = document.getElementById(id);
 
-  let data = troopData[name] || spellData[name];
+let value = Number(number.innerText);
 
-  let newValue = army[name] + amount;
+if(value > 0){
 
-  if(newValue < 0){
-    newValue = 0;
-  }
+value = value - 1;
 
-  army[name] = newValue;
-
-  updateDisplay();
 }
 
+number.innerText = value;
 
-function updateDisplay(){
+updateTotal();
 
-  let used=0;
-
-  for(let name in army){
-
-    const space =
-      troopData[name] || spellData[name];
-
-    used += army[name] * space;
-  }
-
-  document.getElementById("used").innerText=used;
-
-  const remaining=maxCapacity-used;
-
-  document.getElementById("remaining").innerText =
-    remaining >= 0
-    ? remaining+" space remaining"
-    : Math.abs(remaining)+" space over capacity";
-
-  let percentage=(used/maxCapacity)*100;
-
-  if(percentage>100){
-    percentage=100;
-  }
-
-  document.getElementById("progress").style.width =
-    percentage+"%";
 }
 
+function updateTotal(){
 
-function showArmy(){
+let total = 0;
 
-  const result=document.getElementById("armyResult");
+total += Number(document.getElementById("root").innerText);
+total += Number(document.getElementById("valk").innerText);
+total += Number(document.getElementById("dragon").innerText);
+total += Number(document.getElementById("druid").innerText);
 
-  result.style.display="block";
+document.getElementById("total").innerText = total;
 
-  let html="<h3>🔥 Your Army</h3>";
-
-  let found=false;
-
-  for(let name in army){
-
-    if(army[name]>0){
-
-      found=true;
-
-      html +=
-        "⚔️ "+name+
-        " × "+army[name]+"<br>";
-    }
-  }
-
-  if(!found){
-
-    html+="⚠️ Your army is empty.";
-
-  }else{
-
-    html +=
-      "<br>🏰 Housing Used: "+
-      document.getElementById("used").innerText+
-      " / "+maxCapacity;
-  }
-
-  result.innerHTML=html;
 }
-
-
-function resetArmy(){
-
-  for(let name in army){
-
-    army[name]=0;
-
-    const safeId=name.replace(/[^a-zA-Z0-9]/g,"");
-
-    document.getElementById(safeId).innerText="0";
-  }
-
-  updateDisplay();
-
-  document.getElementById("armyResult").style.display="none";
-}
-
-
-createUnits(troopData,"troops");
-createUnits(spellData,"spells");
-
-updateDisplay();
 
 </script>
 
