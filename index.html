@@ -7,127 +7,254 @@
 
 <title>Red Black Gaming | TH17 Attack Helper</title>
 
+<meta name="description" content="Red Black Gaming TH17 Army Builder and Clash of Clans attack strategy helper.">
+
 <style>
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#100707;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#080303;
   color:white;
 }
 
 header{
-  background:#250909;
-  padding:25px 10px;
+  background:linear-gradient(135deg,#300000,#090000);
+  padding:30px 15px;
   text-align:center;
-  border-bottom:2px solid #ff3333;
+  border-bottom:2px solid #ff2222;
+  box-shadow:0 0 25px #ff000033;
 }
 
-header h1{
-  margin:0;
-  color:#ff3333;
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#ff3030;
+  text-shadow:0 0 15px #ff0000;
 }
 
 header p{
   color:#ccc;
+  margin-bottom:0;
 }
 
 .container{
-  max-width:700px;
+  max-width:750px;
   margin:auto;
   padding:15px;
 }
 
 .card{
-  background:#1d0d0d;
+  background:linear-gradient(145deg,#1b0808,#100505);
+  border:1px solid #4a1717;
+  border-radius:16px;
   padding:18px;
-  margin:15px 0;
-  border-radius:15px;
-  border:1px solid #492020;
+  margin:18px 0;
+  box-shadow:0 8px 25px #000;
 }
 
 h2{
-  color:#ff4444;
+  color:#ff4141;
+  margin-top:0;
+}
+
+h3{
+  color:#ffb000;
 }
 
 .unit{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 0;
-  border-bottom:1px solid #352020;
+  padding:12px 4px;
+  border-bottom:1px solid #321515;
+}
+
+.unit:last-child{
+  border-bottom:0;
+}
+
+.unit-name{
+  font-size:16px;
+}
+
+.controls{
+  display:flex;
+  align-items:center;
+  gap:7px;
 }
 
 .controls button{
   width:38px;
   height:38px;
-  border:0;
-  border-radius:8px;
-  background:#ff3333;
+  border:none;
+  border-radius:9px;
+  background:#e52525;
   color:white;
-  font-size:20px;
+  font-size:22px;
   font-weight:bold;
 }
 
+.controls button:active{
+  transform:scale(.92);
+}
+
 .controls span{
-  display:inline-block;
-  width:40px;
+  min-width:35px;
   text-align:center;
   font-size:18px;
+  font-weight:bold;
 }
 
 .mainbtn{
   width:100%;
   padding:14px;
   margin-top:10px;
-  border:0;
-  border-radius:10px;
-  background:#ff3333;
+  border:none;
+  border-radius:11px;
+  background:#e52525;
   color:white;
-  font-size:17px;
+  font-size:16px;
   font-weight:bold;
 }
 
-.reset{
-  background:#444;
+.mainbtn:active{
+  transform:scale(.98);
+}
+
+.green{
+  background:#15803d;
+}
+
+.gray{
+  background:#3d3d3d;
+}
+
+.total{
+  text-align:center;
+  font-size:21px;
+  color:#ffd000;
+  padding:10px;
+}
+
+#armyResult{
+  display:none;
+  margin-top:15px;
+  background:#090909;
+  border:1px solid #333;
+  border-radius:12px;
+  padding:15px;
+  line-height:1.8;
 }
 
 #strategyBox{
   display:none;
   margin-top:15px;
-  background:#2a1111;
+  background:#260b0b;
+  border-left:4px solid #ff3030;
   padding:18px;
-  border-radius:12px;
+  border-radius:10px;
   line-height:1.8;
 }
 
-.total{
+.tip{
+  background:#150b0b;
+  padding:12px;
+  border-radius:10px;
+  margin:8px 0;
+}
+
+.social{
+  display:block;
+  text-decoration:none;
+  color:white;
+  background:#222;
+  padding:13px;
+  border-radius:10px;
+  margin:8px 0;
   text-align:center;
-  font-size:20px;
-  color:#ffd000;
+}
+
+.facebook{
+  background:#1877f2;
+}
+
+.youtube{
+  background:#ff0000;
+}
+
+.tiktok{
+  background:#111;
+  border:1px solid #555;
 }
 
 footer{
   text-align:center;
   color:#777;
-  padding:25px;
+  padding:30px 15px;
+  border-top:1px solid #291010;
+  margin-top:20px;
 }
+
+.small{
+  color:#999;
+  font-size:13px;
+  line-height:1.6;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🔥 RED BLACK GAMING 🔥</h1>
-<p>Clash of Clans TH17 Attack Helper</p>
+
+<div class="logo">
+🔥 RED BLACK GAMING 🔥
+</div>
+
+<p>
+Clash of Clans TH17 Attack Helper
+</p>
+
 </header>
+
 
 <div class="container">
 
+
+<!-- WELCOME -->
+
 <div class="card">
-<h2>⚔️ Build Your Army</h2>
+
+<h2>🏰 TH17 Attack Helper</h2>
+
+<p>
+Build your army below and get a custom attack plan.
+</p>
+
+<p class="small">
+Choose your main troops, spells and support troops.
+Then press <b>GET 3-STAR STRATEGY</b>.
+</p>
+
+</div>
+
+
+<!-- TROOPS -->
+
+<div class="card">
+
+<h2>⚔️ Troops</h2>
+
 
 <div class="unit">
-<span>🌳 Root Rider</span>
+<span class="unit-name">🌳 Root Rider</span>
+
 <div class="controls">
 <button onclick="change('root',-1)">−</button>
 <span id="root">0</span>
@@ -135,8 +262,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>🪓 Valkyrie</span>
+<span class="unit-name">🪓 Valkyrie</span>
+
 <div class="controls">
 <button onclick="change('valk',-1)">−</button>
 <span id="valk">0</span>
@@ -144,8 +273,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>🐉 Dragon</span>
+<span class="unit-name">🐉 Dragon</span>
+
 <div class="controls">
 <button onclick="change('dragon',-1)">−</button>
 <span id="dragon">0</span>
@@ -153,8 +284,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>⚡ Electro Dragon</span>
+<span class="unit-name">⚡ Electro Dragon</span>
+
 <div class="controls">
 <button onclick="change('edragon',-1)">−</button>
 <span id="edragon">0</span>
@@ -162,8 +295,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>🌿 Druid</span>
+<span class="unit-name">🌿 Druid</span>
+
 <div class="controls">
 <button onclick="change('druid',-1)">−</button>
 <span id="druid">0</span>
@@ -171,8 +306,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>💚 Healer</span>
+<span class="unit-name">💚 Healer</span>
+
 <div class="controls">
 <button onclick="change('healer',-1)">−</button>
 <span id="healer">0</span>
@@ -180,8 +317,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>🧙 Wizard</span>
+<span class="unit-name">🧙 Wizard</span>
+
 <div class="controls">
 <button onclick="change('wizard',-1)">−</button>
 <span id="wizard">0</span>
@@ -189,8 +328,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>🏹 Archer</span>
+<span class="unit-name">🏹 Archer</span>
+
 <div class="controls">
 <button onclick="change('archer',-1)">−</button>
 <span id="archer">0</span>
@@ -198,8 +339,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>👹 Minion</span>
+<span class="unit-name">👹 Minion</span>
+
 <div class="controls">
 <button onclick="change('minion',-1)">−</button>
 <span id="minion">0</span>
@@ -207,8 +350,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>🗿 Golem</span>
+<span class="unit-name">🗿 Golem</span>
+
 <div class="controls">
 <button onclick="change('golem',-1)">−</button>
 <span id="golem">0</span>
@@ -216,8 +361,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>💣 Wall Breaker</span>
+<span class="unit-name">💣 Wall Breaker</span>
+
 <div class="controls">
 <button onclick="change('wallbreaker',-1)">−</button>
 <span id="wallbreaker">0</span>
@@ -228,11 +375,16 @@ footer{
 </div>
 
 
+<!-- SPELLS -->
+
 <div class="card">
+
 <h2>🪄 Spells</h2>
 
+
 <div class="unit">
-<span>🔥 Rage Spell</span>
+<span class="unit-name">🔥 Rage</span>
+
 <div class="controls">
 <button onclick="change('rage',-1)">−</button>
 <span id="rage">0</span>
@@ -240,8 +392,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>❄️ Freeze Spell</span>
+<span class="unit-name">❄️ Freeze</span>
+
 <div class="controls">
 <button onclick="change('freeze',-1)">−</button>
 <span id="freeze">0</span>
@@ -249,8 +403,10 @@ footer{
 </div>
 </div>
 
+
 <div class="unit">
-<span>👻 Invisibility</span>
+<span class="unit-name">👻 Invisibility</span>
+
 <div class="controls">
 <button onclick="change('invisibility',-1)">−</button>
 <span id="invisibility">0</span>
@@ -261,18 +417,27 @@ footer{
 </div>
 
 
+<!-- TOTAL -->
+
 <div class="card">
+
 <div class="total">
-Total Army Units: <span id="total">0</span>
+
+⚔️ Army Units:
+<span id="total">0</span>
+
 </div>
 
-<button class="mainbtn" onclick="showArmy()">
+<button class="mainbtn green" onclick="showArmy()">
 📋 SHOW MY ARMY
 </button>
 
-<button class="mainbtn reset" onclick="resetArmy()">
+<button class="mainbtn gray" onclick="resetArmy()">
 🔄 RESET ARMY
 </button>
+
+<div id="armyResult"></div>
+
 </div>
 
 
@@ -280,10 +445,10 @@ Total Army Units: <span id="total">0</span>
 
 <div class="card">
 
-<h2>🎯 TH17 3-Star Strategy</h2>
+<h2>🎯 3-Star Strategy Generator</h2>
 
-<p style="color:#ccc;">
-Build your army first, then generate your attack plan.
+<p class="small">
+Build your army first. Then press the button to generate a strategy.
 </p>
 
 <button class="mainbtn" onclick="getStrategy()">
@@ -294,16 +459,113 @@ Build your army first, then generate your attack plan.
 
 </div>
 
+
+<!-- ATTACK TIPS -->
+
+<div class="card">
+
+<h2>💡 TH17 Attack Tips</h2>
+
+<div class="tip">
+🎯 <b>Funnel First:</b>
+Create a clear path before sending your main army.
 </div>
 
+<div class="tip">
+⚔️ <b>Don't Spread:</b>
+Keep your main troops together when possible.
+</div>
+
+<div class="tip">
+🪄 <b>Save Spells:</b>
+Don't waste Rage or Freeze too early.
+</div>
+
+<div class="tip">
+🏆 <b>Cleanup:</b>
+Always keep some troops for buildings left around the edges.
+</div>
+
+<div class="tip">
+🧠 <b>Scout:</b>
+Look at the enemy base before choosing your entry point.
+</div>
+
+</div>
+
+
+<!-- SOCIAL -->
+
+<div class="card">
+
+<h2>📱 Follow Red Black Gaming</h2>
+
+<p class="small">
+More Clash of Clans attacks, gaming videos and tips coming soon.
+</p>
+
+<a class="social facebook"
+href="https://www.facebook.com/share/19P55WzyoR/"
+target="_blank">
+📘 Facebook
+</a>
+
+<a class="social youtube"
+href="#"
+onclick="alert('YouTube link will be added soon!');return false;">
+▶️ YouTube
+</a>
+
+<a class="social tiktok"
+href="#"
+onclick="alert('TikTok link will be added soon!');return false;">
+🎵 TikTok
+</a>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<div class="card">
+
+<h2>ℹ️ About Red Black Gaming</h2>
+
+<p>
+Welcome to <b>Red Black Gaming</b> — a gaming website focused on
+Clash of Clans attack strategies, TH17 army building and gaming tips.
+</p>
+
+<p class="small">
+This website is an independent gaming project.
+Clash of Clans is a trademark of Supercell.
+</p>
+
+</div>
+
+
+</div>
+
+
 <footer>
-🔥 Red Black Gaming • TH17 Attack Helper 🔥
+
+🔥 RED BLACK GAMING 🔥
+
+<br><br>
+
+TH17 Attack Helper
+
+<br><br>
+
+© 2026 Red Black Gaming
+
 </footer>
 
 
 <script>
 
 let units = {
+
 root:0,
 valk:0,
 dragon:0,
@@ -315,9 +577,11 @@ archer:0,
 minion:0,
 golem:0,
 wallbreaker:0,
+
 rage:0,
 freeze:0,
 invisibility:0
+
 };
 
 
@@ -332,6 +596,7 @@ units[name] = 0;
 document.getElementById(name).innerText = units[name];
 
 updateTotal();
+
 }
 
 
@@ -346,30 +611,49 @@ key !== "rage" &&
 key !== "freeze" &&
 key !== "invisibility"
 ){
+
 total += units[key];
+
 }
 
 }
 
 document.getElementById("total").innerText = total;
+
 }
 
 
 function showArmy(){
 
-let text = "⚔️ YOUR TH17 ARMY\n\n";
+let result = document.getElementById("armyResult");
+
+let text = "<h3>⚔️ YOUR ARMY</h3>";
+
+let found = false;
 
 for(let key in units){
 
 if(units[key] > 0){
 
-text += key.toUpperCase() + ": " + units[key] + "\n";
+found = true;
+
+text += "🔥 " + key.toUpperCase() +
+": <b>" + units[key] + "</b><br>";
 
 }
 
 }
 
-alert(text);
+if(!found){
+
+text += "⚠️ Your army is empty. Add some troops first.";
+
+}
+
+result.innerHTML = text;
+
+result.style.display = "block";
+
 }
 
 
@@ -385,6 +669,8 @@ document.getElementById(key).innerText = "0";
 
 updateTotal();
 
+document.getElementById("armyResult").style.display = "none";
+
 document.getElementById("strategyBox").style.display = "none";
 
 }
@@ -393,9 +679,9 @@ document.getElementById("strategyBox").style.display = "none";
 function getStrategy(){
 
 let root = units.root;
+let valk = units.valk;
 let dragon = units.dragon;
 let edragon = units.edragon;
-let valk = units.valk;
 let healer = units.healer;
 let druid = units.druid;
 let golem = units.golem;
@@ -405,31 +691,36 @@ let box = document.getElementById("strategyBox");
 box.style.display = "block";
 
 
+/* ROOT RIDER */
+
 if(root >= 5 && root > dragon){
 
 box.innerHTML = `
 
 <h3>🌳 ROOT RIDER 3-STAR PLAN</h3>
 
-<p>⚔️ <b>Attack Style:</b> Ground Push</p>
+<p>⚔️ <b>Main Attack:</b> Ground Push</p>
 
-<p>1️⃣ Create a funnel on one side of the base.</p>
+<p>1️⃣ Create a funnel on one side.</p>
 
-<p>2️⃣ Send Heroes to remove outside buildings.</p>
+<p>2️⃣ Use Heroes to remove outside buildings.</p>
 
-<p>3️⃣ Deploy Root Riders together toward the core.</p>
+<p>3️⃣ Send Root Riders toward the core.</p>
 
 <p>4️⃣ Use Rage when the main army reaches heavy defenses.</p>
 
-<p>5️⃣ Use Freeze on dangerous defenses.</p>
+<p>5️⃣ Freeze dangerous defenses at important moments.</p>
 
-<p>6️⃣ Keep cleanup troops for buildings around the edges.</p>
+<p>6️⃣ Save cleanup troops for the outside buildings.</p>
 
-<p>🏆 <b>Goal:</b> Push through the core and finish with cleanup.</p>
+<p>🏆 <b>Goal:</b> Keep the main army moving through the core.</p>
 
 `;
 
 }
+
+
+/* DRAGON */
 
 else if(dragon >= 5 && dragon >= edragon){
 
@@ -437,25 +728,28 @@ box.innerHTML = `
 
 <h3>🐉 DRAGON 3-STAR PLAN</h3>
 
-<p>⚔️ <b>Attack Style:</b> Air Push</p>
+<p>⚔️ <b>Main Attack:</b> Air Push</p>
 
-<p>1️⃣ Choose one side of the base.</p>
+<p>1️⃣ Pick one side of the base.</p>
 
-<p>2️⃣ Clear buildings to create an air funnel.</p>
+<p>2️⃣ Clear outside buildings to create an air funnel.</p>
 
 <p>3️⃣ Deploy Dragons together.</p>
 
-<p>4️⃣ Use Rage when Dragons enter important defenses.</p>
+<p>4️⃣ Use Rage when the Dragons enter high-value areas.</p>
 
-<p>5️⃣ Freeze dangerous air defenses.</p>
+<p>5️⃣ Freeze dangerous defenses.</p>
 
-<p>6️⃣ Save cleanup troops for the final buildings.</p>
+<p>6️⃣ Keep cleanup troops for the end.</p>
 
-<p>🔥 <b>Tip:</b> Keep your Dragons moving toward the Town Hall/core.</p>
+<p>🔥 <b>Tip:</b> Don't let the Dragons split into different directions.</p>
 
 `;
 
 }
+
+
+/* ELECTRO DRAGON */
 
 else if(edragon >= 4){
 
@@ -463,25 +757,28 @@ box.innerHTML = `
 
 <h3>⚡ ELECTRO DRAGON PLAN</h3>
 
-<p>⚔️ <b>Attack Style:</b> Chain Damage Air Attack</p>
+<p>⚔️ <b>Main Attack:</b> Chain Damage Air Attack</p>
 
 <p>1️⃣ Look for buildings positioned close together.</p>
 
-<p>2️⃣ Create a clean funnel.</p>
+<p>2️⃣ Build an air funnel.</p>
 
 <p>3️⃣ Deploy Electro Dragons together.</p>
 
-<p>4️⃣ Use Rage to increase their damage.</p>
+<p>4️⃣ Rage the main push when needed.</p>
 
 <p>5️⃣ Freeze dangerous defenses.</p>
 
-<p>6️⃣ Protect the main push and keep cleanup ready.</p>
+<p>6️⃣ Save cleanup troops.</p>
 
-<p>⚡ <b>Tip:</b> Avoid spreading Electro Dragons too much.</p>
+<p>⚡ <b>Tip:</b> Avoid spreading the Electro Dragons too much.</p>
 
 `;
 
 }
+
+
+/* VALKYRIE */
 
 else if(valk >= 5){
 
@@ -489,25 +786,28 @@ box.innerHTML = `
 
 <h3>🪓 VALKYRIE GROUND PLAN</h3>
 
-<p>⚔️ <b>Attack Style:</b> Ground Smash</p>
+<p>⚔️ <b>Main Attack:</b> Ground Smash</p>
 
-<p>1️⃣ Create a funnel first.</p>
+<p>1️⃣ Create a funnel.</p>
 
-<p>2️⃣ Send your tank/support troops in front.</p>
+<p>2️⃣ Use tank troops in front.</p>
 
-<p>3️⃣ Deploy Valkyries toward the core.</p>
+<p>3️⃣ Send Valkyries toward the core.</p>
 
-<p>4️⃣ Use Rage when entering the core.</p>
+<p>4️⃣ Use Rage when entering important areas.</p>
 
-<p>5️⃣ Use Heroes to support the main army.</p>
+<p>5️⃣ Support the army with Heroes.</p>
 
-<p>6️⃣ Save cleanup troops for the end.</p>
+<p>6️⃣ Keep cleanup troops for the end.</p>
 
-<p>🏆 <b>Goal:</b> Keep the army moving through the base.</p>
+<p>🏆 <b>Goal:</b> Keep the army moving forward.</p>
 
 `;
 
 }
+
+
+/* GOLEM + HEALER */
 
 else if(golem > 0 && healer > 0){
 
@@ -515,23 +815,26 @@ box.innerHTML = `
 
 <h3>🗿 GOLEM + HEALER PLAN</h3>
 
-<p>⚔️ <b>Attack Style:</b> Ground Support</p>
+<p>⚔️ <b>Main Attack:</b> Ground Support</p>
 
-<p>1️⃣ Use Golems as your frontline.</p>
+<p>1️⃣ Use Golems as frontline troops.</p>
 
 <p>2️⃣ Protect your Healers.</p>
 
 <p>3️⃣ Create a strong funnel.</p>
 
-<p>4️⃣ Send your main troops into the base.</p>
+<p>4️⃣ Send the main troops inside.</p>
 
 <p>5️⃣ Use Rage at high-value areas.</p>
 
-<p>6️⃣ Keep some troops for cleanup.</p>
+<p>6️⃣ Keep cleanup troops ready.</p>
 
 `;
 
 }
+
+
+/* SUPPORT */
 
 else if(healer > 0 && druid > 0){
 
@@ -547,15 +850,18 @@ box.innerHTML = `
 
 <p>3️⃣ Let the main troops enter first.</p>
 
-<p>4️⃣ Use support abilities carefully.</p>
+<p>4️⃣ Use support carefully.</p>
 
-<p>5️⃣ Keep your army together.</p>
+<p>5️⃣ Keep the army together.</p>
 
 <p>🎯 Focus on good pathing.</p>
 
 `;
 
 }
+
+
+/* CUSTOM */
 
 else{
 
@@ -575,7 +881,7 @@ box.innerHTML = `
 
 <p>5️⃣ Keep cleanup troops for the end.</p>
 
-<p>🔥 Try building a more focused TH17 army for a stronger 3-star attempt.</p>
+<p>🔥 Try making a more focused army for a stronger 3-star attempt.</p>
 
 `;
 
