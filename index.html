@@ -1,204 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Black Gaming | COC TH17 Attack Helper</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<title>Red Black Gaming | TH17 Army Builder</title>
 
-    body {
-      background: #0b0b0b;
-      color: white;
-      text-align: center;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
 
-    header {
-      background: linear-gradient(135deg, #e00000, #111);
-      padding: 30px 15px;
-      border-bottom: 3px solid #ff0000;
-    }
+body{
+  background:#080808;
+  color:white;
+}
 
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
+header{
+  text-align:center;
+  padding:30px 15px;
+  background:linear-gradient(135deg,#e00000,#111);
+  border-bottom:3px solid red;
+}
 
-    header p {
-      color: #ddd;
-    }
+header h1{
+  font-size:30px;
+}
 
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 25px 15px;
-    }
+header p{
+  color:#ddd;
+  margin-top:8px;
+}
 
-    .card {
-      background: #171717;
-      border: 1px solid #333;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 15px 0;
-      box-shadow: 0 5px 20px rgba(255,0,0,0.15);
-    }
+.container{
+  max-width:750px;
+  margin:auto;
+  padding:20px 15px;
+}
 
-    .card h2 {
-      color: #ff3030;
-      margin-bottom: 10px;
-    }
+.card{
+  background:#171717;
+  border:1px solid #333;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:18px;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 12px;
-      border: none;
-      border-radius: 10px;
-      background: #e00000;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.card h2{
+  color:#ff3030;
+  margin-bottom:15px;
+}
 
-    button:hover {
-      background: #ff3030;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
 
-    .result {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      background: #222;
-      border-radius: 10px;
-      text-align: left;
-      line-height: 1.7;
-    }
+.item{
+  background:#222;
+  border:1px solid #444;
+  border-radius:10px;
+  padding:12px;
+  cursor:pointer;
+  text-align:center;
+}
 
-    footer {
-      margin-top: 30px;
-      padding: 20px;
-      background: #111;
-      color: #888;
-    }
-  </style>
+.item:hover{
+  border-color:red;
+  background:#2b1111;
+}
+
+.item.selected{
+  background:#b00000;
+  border-color:#ff5555;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  border:0;
+  border-radius:10px;
+  background:#e00000;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+}
+
+button:hover{
+  background:#ff3030;
+}
+
+#armyResult{
+  display:none;
+  margin-top:15px;
+  background:#222;
+  padding:15px;
+  border-radius:10px;
+  line-height:1.8;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111;
+  color:#888;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🔥 RED BLACK GAMING 🔥</h1>
-    <p>Clash of Clans TH17 Attack Helper</p>
-  </header>
+<header>
+  <h1>🔥 RED BLACK GAMING 🔥</h1>
+  <p>Clash of Clans TH17 Army Builder</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="card">
-      <h2>🏰 TH17 Attack Helper</h2>
-      <p>Choose an attack strategy and learn the basic army setup.</p>
+<div class="card">
 
-      <button onclick="showStrategy('root')">
-        🌳 Root Rider + Valkyrie
-      </button>
+<h2>🪖 Choose Your Troops</h2>
 
-      <button onclick="showStrategy('druid')">
-        🌿 Druid + Root Rider
-      </button>
+<div class="grid">
 
-      <button onclick="showStrategy('air')">
-        🐉 Dragon Air Attack
-      </button>
+<div class="item" onclick="selectItem(this,'Root Rider')">
+🌳 Root Rider
+</div>
 
-      <div id="strategy" class="result"></div>
-    </div>
+<div class="item" onclick="selectItem(this,'Valkyrie')">
+⚔️ Valkyrie
+</div>
 
-    <div class="card">
-      <h2>⚔️ Attack Tips</h2>
+<div class="item" onclick="selectItem(this,'Dragon')">
+🐉 Dragon
+</div>
 
-      <button onclick="showTips()">
-        📋 Show Attack Tips
-      </button>
+<div class="item" onclick="selectItem(this,'Electro Dragon')">
+⚡ Electro Dragon
+</div>
 
-      <div id="tips" class="result"></div>
-    </div>
+<div class="item" onclick="selectItem(this,'Druid')">
+🌿 Druid
+</div>
 
-  </div>
+<div class="item" onclick="selectItem(this,'Healer')">
+💚 Healer
+</div>
 
-  <footer>
-    <p>© 2026 Red Black Gaming</p>
-    <p>Made for Clash of Clans players ❤️</p>
-  </footer>
+<div class="item" onclick="selectItem(this,'Wizard')">
+🧙 Wizard
+</div>
 
-  <script>
+<div class="item" onclick="selectItem(this,'Archer')">
+🏹 Archer
+</div>
 
-    function showStrategy(type) {
+</div>
 
-      const box = document.getElementById("strategy");
+</div>
 
-      box.style.display = "block";
 
-      if (type === "root") {
-        box.innerHTML = `
-          <h3>🌳 Root Rider + Valkyrie</h3>
-          <p><b>Army idea:</b></p>
-          <p>Root Riders + Valkyries + support troops</p>
-          <p><b>Basic plan:</b></p>
-          <p>1️⃣ Create a funnel.</p>
-          <p>2️⃣ Send the main army toward the core.</p>
-          <p>3️⃣ Use heroes and spells at the correct timing.</p>
-          <p>4️⃣ Save some troops for cleanup.</p>
-        `;
-      }
+<div class="card">
 
-      if (type === "druid") {
-        box.innerHTML = `
-          <h3>🌿 Druid + Root Rider</h3>
-          <p><b>Army idea:</b></p>
-          <p>Root Riders + Druids + support troops</p>
-          <p><b>Basic plan:</b></p>
-          <p>1️⃣ Start with a safe funnel.</p>
-          <p>2️⃣ Push the main army inside.</p>
-          <p>3️⃣ Use Druids to support the army.</p>
-          <p>4️⃣ Keep an eye on spell timing.</p>
-        `;
-      }
+<h2>🪄 Choose Spells</h2>
 
-      if (type === "air") {
-        box.innerHTML = `
-          <h3>🐉 Dragon Air Attack</h3>
-          <p><b>Army idea:</b></p>
-          <p>Dragons + support air troops</p>
-          <p><b>Basic plan:</b></p>
-          <p>1️⃣ Remove important defenses first.</p>
-          <p>2️⃣ Create an air funnel.</p>
-          <p>3️⃣ Send Dragons through the base.</p>
-          <p>4️⃣ Use air spells carefully.</p>
-        `;
-      }
-    }
+<div class="grid">
 
-    function showTips() {
+<div class="item" onclick="selectItem(this,'Rage Spell')">
+🔥 Rage
+</div>
 
-      const box = document.getElementById("tips");
+<div class="item" onclick="selectItem(this,'Freeze Spell')">
+❄️ Freeze
+</div>
 
-      box.style.display = "block";
+<div class="item" onclick="selectItem(this,'Jump Spell')">
+🟢 Jump
+</div>
 
-      box.innerHTML = `
-        <p>🎯 Study the enemy base before attacking.</p>
-        <p>🧠 Plan your funnel first.</p>
-        <p>⏱️ Don't use all abilities at once.</p>
-        <p>🪄 Save important spells for the core.</p>
-        <p>🏆 Always keep cleanup troops.</p>
-      `;
-    }
+<div class="item" onclick="selectItem(this,'Invisibility Spell')">
+👻 Invisibility
+</div>
 
-  </script>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>👑 Choose Heroes</h2>
+
+<div class="grid">
+
+<div class="item" onclick="selectItem(this,'Barbarian King')">
+👑 Barbarian King
+</div>
+
+<div class="item" onclick="selectItem(this,'Archer Queen')">
+🏹 Archer Queen
+</div>
+
+<div class="item" onclick="selectItem(this,'Grand Warden')">
+🧙 Grand Warden
+</div>
+
+<div class="item" onclick="selectItem(this,'Royal Champion')">
+🛡️ Royal Champion
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>⚔️ My Army</h2>
+
+<p id="count">Selected: 0</p>
+
+<button onclick="showArmy()">
+🚀 BUILD MY ARMY
+</button>
+
+<div id="armyResult"></div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Red Black Gaming</p>
+<p>Made for Clash of Clans players ❤️</p>
+</footer>
+
+
+<script>
+
+let army=[];
+
+function selectItem(element,name){
+
+  if(element.classList.contains("selected")){
+
+    element.classList.remove("selected");
+
+    army=army.filter(item=>item!==name);
+
+  }else{
+
+    element.classList.add("selected");
+
+    army.push(name);
+
+  }
+
+  document.getElementById("count").innerText=
+  "Selected: "+army.length;
+
+}
+
+
+function showArmy(){
+
+  const result=document.getElementById("armyResult");
+
+  result.style.display="block";
+
+  if(army.length===0){
+
+    result.innerHTML=
+    "⚠️ Please select some troops, spells or heroes first.";
+
+    return;
+  }
+
+  let html="<h3>🔥 Your Selected Army</h3>";
+
+  army.forEach((item,index)=>{
+
+    html += (index+1)+"️⃣ "+item+"<br>";
+
+  });
+
+  html += "<br>⚔️ Good luck with your attack!";
+
+  result.innerHTML=html;
+
+}
+
+</script>
 
 </body>
 </html>
